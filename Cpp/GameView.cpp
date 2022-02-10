@@ -34,10 +34,10 @@ bool GameView::OnUserUpdate(float fElapsedTime) {
         player_position.y += speed * cos_a * fElapsedTime;
     }
     if (GetKey(olc::Key::LEFT).bHeld) {
-        player_angle -= 0.02f;
+        player_angle -= 3.0f * fElapsedTime;
     }
     if (GetKey(olc::Key::RIGHT).bHeld) {
-        player_angle += 0.02f;
+        player_angle += 3.0f * fElapsedTime;
     }
 
     DrawLine(player_position, {int(player_position.x + WIN_WIDTH * cos(player_angle)),
